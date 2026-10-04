@@ -11,6 +11,19 @@ resident module is a rewrite with explicit input validation, arbitrary entry
 residents, search limits, stable operation indices and sequential pruning.
 Correctness tests do not establish historical novelty or practical speedups.
 
+Here, "local implementation" identifies where this code was developed. It does
+not establish that the algorithm was invented here. Dense bottom-up extraction,
+shortest-path search, local search, topological ordering constraints and
+feasibility checking are established techniques. The direct heuristic's
+particular configuration was developed in the research workspace, but its
+historical novelty has not been established. The contextual deletion criterion
+is a candidate contribution whose novelty remains unresolved.
+
+The earlier workspace has no committed authorship history. The source hashes
+below establish the files used for this release; they do not establish original
+authorship of every line. The retained extraction-gym notice and source lineage
+are not a substitute for a complete code-provenance audit.
+
 ## Source lineage
 
 | Release component | Research source |

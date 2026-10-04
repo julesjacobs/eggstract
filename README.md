@@ -15,6 +15,27 @@ The native library has no Python or external solver dependency. The Rust API
 uses [`egraph-serialize`](https://crates.io/crates/egraph-serialize) graphs and
 explicit requested roots.
 
+## Credit and originality
+
+Eggstract packages implementations and adaptations of established methods,
+alongside a locally developed heuristic configuration and an experimental
+theorem candidate. It does not claim to have invented every algorithm it exposes.
+
+| Component | Attribution |
+|---|---|
+| Tree seed | Local implementation of established Dijkstra-style bottom-up extraction |
+| DAG search | Configuration developed in the Eggstract research workspace, using established sharing and local-search ideas; no demonstrated novelty claim |
+| CP-SAT backend | Local model and driver using Google's [OR-Tools](https://github.com/google/or-tools) solver |
+| Resident search | Local implementation of standard shortest-path search; reverse rematerialization is prior work |
+| Contextual deletion test | Proposed in an AI research consultation and independently checked locally; historical novelty remains unresolved |
+
+The research workspace included adaptations of
+[extraction-gym](https://github.com/egraphs-good/extraction-gym); its MIT notice
+is retained in [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES).
+Implementation lineage, AI assistance, prior-art references and remaining
+uncertainty are described in [provenance](docs/provenance.md) and
+[the resident-model notes](docs/resident.md).
+
 ## Rust
 
 Until a crates.io release, depend on the Git repository:
