@@ -1,0 +1,11 @@
+{
+  "nodes": {
+    "a": { "op": "a", "eclass": "A", "cost": 4, "children": [] },
+    "b": { "op": "b", "eclass": "B", "cost": 4, "children": [] },
+    "shared": { "op": "shared", "eclass": "S", "cost": 6, "children": [] },
+    "a_shared": { "op": "a_shared", "eclass": "A", "cost": 0, "children": ["shared"] },
+    "b_shared": { "op": "b_shared", "eclass": "B", "cost": 0, "children": ["shared"] },
+    "root": { "op": "pair", "eclass": "R", "cost": 0, "children": ["a", "b"] }
+  },
+  "root_eclasses": ["R"]
+}

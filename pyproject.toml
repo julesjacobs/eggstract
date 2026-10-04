@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eggstract-tools"
+version = "0.1.0"
+description = "Optional exact DAG extraction and experimental memory-bounded extraction"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES"]
+authors = [{name = "Jules Jacobs"}]
+
+[project.optional-dependencies]
+exact = ["ortools>=9.14,<10"]
+
+[project.urls]
+Repository = "https://github.com/julesjacobs/eggstract"
+
+[tool.setuptools.packages.find]
+where = ["python"]
+include = ["eggstract*"]

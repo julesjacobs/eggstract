@@ -1,0 +1,34 @@
+[package]
+name = "eggstract"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+license = "MIT"
+description = "Shared DAG extraction from e-graphs"
+repository = "https://github.com/julesjacobs/eggstract"
+readme = "README.md"
+keywords = ["egraph", "extraction", "optimization"]
+categories = ["algorithms"]
+include = ["src/**", "tests/**", "examples/**", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "THIRD_PARTY_NOTICES", "docs/**"]
+
+[features]
+default = []
+cli = ["dep:clap", "dep:serde_json"]
+
+[dependencies]
+egraph-serialize = "0.3"
+rustc-hash = "2"
+clap = { version = "4", features = ["derive"], optional = true }
+serde_json = { version = "1", optional = true }
+
+[dev-dependencies]
+serde_json = "1"
+
+[[bin]]
+name = "eggstract"
+path = "src/main.rs"
+required-features = ["cli"]
+
+[[example]]
+name = "sharing"
+path = "examples/sharing.rs"
