@@ -1,0 +1,15 @@
+[package]
+name = "upstream-gym"
+version = "0.0.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[dependencies]
+indexmap = "2.0.0"
+ordered-float = "3"
+rustc-hash = "1.1.0"
+
+[dependencies.egraph-serialize]
+git = "https://github.com/egraphs-good/egraph-serialize"
+rev = "951b829a434f4008c7b45ba4ac0da1037d2da90"

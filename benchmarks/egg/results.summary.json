@@ -1,0 +1,1099 @@
+{
+  "schema_version": 1,
+  "run_complete": true,
+  "smoke": false,
+  "config": {
+    "egg_version": "0.11.0",
+    "methods": [
+      "egg-tree",
+      "egg-lp",
+      "gym-greedy-dag",
+      "gym-faster-greedy-dag",
+      "eggstract-tree",
+      "eggstract-dag"
+    ],
+    "gym_revision": "903ba0f818b50608fe20ae9e0f03c35cb27bc50a",
+    "gym_setup": "untimed serialization adapter and lazy class-index construction; upstream algorithms unchanged including iteration logging",
+    "solver": "good_lp::coin_cbc",
+    "cost_model": "unit node cost, summed once over requested-root DAG",
+    "families": [
+      "polynomial",
+      "boolean"
+    ],
+    "sizes": [
+      32,
+      128,
+      512
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "source_pruning": "union of ancestors of four source roots before insertion and saturation; final roots canonicalized and deduplicated",
+    "generation_iterations": 5,
+    "generation_node_limit": 30000,
+    "generation_guard_seconds": 3600,
+    "native_seconds": 1.0,
+    "native_seed": 0,
+    "lp_solver_seconds": 1.0,
+    "budget_semantics": "native cooperative extraction budget; LP solver-only cap; neither is a total wall-time cap",
+    "warmups": 1,
+    "measured_repetitions": 5,
+    "order": "rotate methods by (case index + repetition) modulo 6",
+    "timing": "fresh extractor, algorithm setup/search, result construction and verification; excludes graph generation/export, output encoding and file IO",
+    "lp_status": "API does not expose solver status or bound; feasible results do not imply optimality; DFS cycle pruning restricts alternatives",
+    "smoke": false,
+    "os": "macos",
+    "architecture": "aarch64",
+    "started_unix_seconds": 1791120241
+  },
+  "plotted_methods": [
+    "egg-tree",
+    "egg-lp",
+    "gym-greedy-dag",
+    "gym-faster-greedy-dag",
+    "eggstract-dag"
+  ],
+  "expected_cases": 24,
+  "observed_cases": 24,
+  "aggregation": {
+    "cost_ratio": "geometric mean of per-case median cost divided by egg-tree per-case median cost",
+    "elapsed_ms": "geometric mean of per-case median elapsed milliseconds",
+    "warmups": "excluded from aggregates; all failures and missing warmups reported",
+    "missing_data": "no aggregate unless all measured repetitions of all configured family cases are valid"
+  },
+  "families": {
+    "boolean": {
+      "egg-tree": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 1.0,
+        "elapsed_ms": 0.1963209852488678,
+        "baseline_complete": true
+      },
+      "egg-lp": {
+        "expected_cases": 12,
+        "complete_cases": 5,
+        "cost_ratio": null,
+        "elapsed_ms": null,
+        "baseline_complete": true
+      },
+      "gym-greedy-dag": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 0.9951543761211893,
+        "elapsed_ms": 1.7393597642193899,
+        "baseline_complete": true
+      },
+      "gym-faster-greedy-dag": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 1.003558068977713,
+        "elapsed_ms": 1.007692305820699,
+        "baseline_complete": true
+      },
+      "eggstract-tree": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 1.0033218253034262,
+        "elapsed_ms": 0.16085103430838868,
+        "baseline_complete": true
+      },
+      "eggstract-dag": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 0.9696359927790765,
+        "elapsed_ms": 1.2491371791476886,
+        "baseline_complete": true
+      }
+    },
+    "polynomial": {
+      "egg-tree": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 1.0,
+        "elapsed_ms": 0.2924212931079827,
+        "baseline_complete": true
+      },
+      "egg-lp": {
+        "expected_cases": 12,
+        "complete_cases": 11,
+        "cost_ratio": null,
+        "elapsed_ms": null,
+        "baseline_complete": true
+      },
+      "gym-greedy-dag": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 0.9238966454004026,
+        "elapsed_ms": 2.871751762682721,
+        "baseline_complete": true
+      },
+      "gym-faster-greedy-dag": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 0.9142253843289154,
+        "elapsed_ms": 1.532311754528977,
+        "baseline_complete": true
+      },
+      "eggstract-tree": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 1.036818429124257,
+        "elapsed_ms": 0.2215577110088941,
+        "baseline_complete": true
+      },
+      "eggstract-dag": {
+        "expected_cases": 12,
+        "complete_cases": 12,
+        "cost_ratio": 0.8169186061591269,
+        "elapsed_ms": 3.2080602280788497,
+        "baseline_complete": true
+      }
+    }
+  },
+  "cases": {
+    "polynomial/32/0": {
+      "egg-tree": {
+        "median_cost": 13.0,
+        "median_elapsed_ms": 0.011458
+      },
+      "egg-lp": {
+        "median_cost": 13.0,
+        "median_elapsed_ms": 2.541
+      },
+      "gym-greedy-dag": {
+        "median_cost": 13.0,
+        "median_elapsed_ms": 0.043083
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 14.0,
+        "median_elapsed_ms": 0.044208
+      },
+      "eggstract-tree": {
+        "median_cost": 13.0,
+        "median_elapsed_ms": 0.012709
+      },
+      "eggstract-dag": {
+        "median_cost": 13.0,
+        "median_elapsed_ms": 0.043625
+      }
+    },
+    "polynomial/32/1": {
+      "egg-tree": {
+        "median_cost": 32.0,
+        "median_elapsed_ms": 0.145458
+      },
+      "egg-lp": {
+        "median_cost": 21.0,
+        "median_elapsed_ms": 960.955
+      },
+      "gym-greedy-dag": {
+        "median_cost": 27.0,
+        "median_elapsed_ms": 1.191166
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 25.0,
+        "median_elapsed_ms": 0.726083
+      },
+      "eggstract-tree": {
+        "median_cost": 31.0,
+        "median_elapsed_ms": 0.13425
+      },
+      "eggstract-dag": {
+        "median_cost": 21.0,
+        "median_elapsed_ms": 1.74325
+      }
+    },
+    "polynomial/32/2": {
+      "egg-tree": {
+        "median_cost": 18.0,
+        "median_elapsed_ms": 0.096083
+      },
+      "egg-lp": {
+        "median_cost": 17.0,
+        "median_elapsed_ms": 57.505458
+      },
+      "gym-greedy-dag": {
+        "median_cost": 18.0,
+        "median_elapsed_ms": 0.786583
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 18.0,
+        "median_elapsed_ms": 0.500667
+      },
+      "eggstract-tree": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.073042
+      },
+      "eggstract-dag": {
+        "median_cost": 17.0,
+        "median_elapsed_ms": 0.766792
+      }
+    },
+    "polynomial/32/3": {
+      "egg-tree": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.0385
+      },
+      "egg-lp": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 46.681542
+      },
+      "gym-greedy-dag": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.217916
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.173291
+      },
+      "eggstract-tree": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.04425
+      },
+      "eggstract-dag": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.234541
+      }
+    },
+    "polynomial/128/0": {
+      "egg-tree": {
+        "median_cost": 73.0,
+        "median_elapsed_ms": 0.673542
+      },
+      "egg-lp": {
+        "median_cost": 87.0,
+        "median_elapsed_ms": 700.40925
+      },
+      "gym-greedy-dag": {
+        "median_cost": 70.0,
+        "median_elapsed_ms": 6.827375
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 67.0,
+        "median_elapsed_ms": 3.758584
+      },
+      "eggstract-tree": {
+        "median_cost": 77.0,
+        "median_elapsed_ms": 0.529791
+      },
+      "eggstract-dag": {
+        "median_cost": 62.0,
+        "median_elapsed_ms": 8.272958
+      }
+    },
+    "polynomial/128/1": {
+      "egg-tree": {
+        "median_cost": 29.0,
+        "median_elapsed_ms": 0.470416
+      },
+      "egg-lp": {
+        "median_cost": 26.0,
+        "median_elapsed_ms": 839.983417
+      },
+      "gym-greedy-dag": {
+        "median_cost": 26.0,
+        "median_elapsed_ms": 5.646042
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 27.0,
+        "median_elapsed_ms": 2.808334
+      },
+      "eggstract-tree": {
+        "median_cost": 32.0,
+        "median_elapsed_ms": 0.32625
+      },
+      "eggstract-dag": {
+        "median_cost": 26.0,
+        "median_elapsed_ms": 5.051333
+      }
+    },
+    "polynomial/128/2": {
+      "egg-tree": {
+        "median_cost": 54.0,
+        "median_elapsed_ms": 0.683667
+      },
+      "egg-lp": {
+        "median_cost": 56.0,
+        "median_elapsed_ms": 632.61775
+      },
+      "gym-greedy-dag": {
+        "median_cost": 48.0,
+        "median_elapsed_ms": 5.739125
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 48.0,
+        "median_elapsed_ms": 3.553875
+      },
+      "eggstract-tree": {
+        "median_cost": 55.0,
+        "median_elapsed_ms": 0.492084
+      },
+      "eggstract-dag": {
+        "median_cost": 44.0,
+        "median_elapsed_ms": 7.666666
+      }
+    },
+    "polynomial/128/3": {
+      "egg-tree": {
+        "median_cost": 37.0,
+        "median_elapsed_ms": 0.275
+      },
+      "egg-lp": {
+        "median_cost": 36.0,
+        "median_elapsed_ms": 939.406583
+      },
+      "gym-greedy-dag": {
+        "median_cost": 35.0,
+        "median_elapsed_ms": 2.664458
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 39.0,
+        "median_elapsed_ms": 1.486667
+      },
+      "eggstract-tree": {
+        "median_cost": 38.0,
+        "median_elapsed_ms": 0.19275
+      },
+      "eggstract-dag": {
+        "median_cost": 34.0,
+        "median_elapsed_ms": 1.938375
+      }
+    },
+    "polynomial/512/0": {
+      "egg-tree": {
+        "median_cost": 168.0,
+        "median_elapsed_ms": 1.406125
+      },
+      "egg-lp": {
+        "median_cost": 159.0,
+        "median_elapsed_ms": 1080.999917
+      },
+      "gym-greedy-dag": {
+        "median_cost": 154.0,
+        "median_elapsed_ms": 22.119666
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 145.0,
+        "median_elapsed_ms": 6.267083
+      },
+      "eggstract-tree": {
+        "median_cost": 182.0,
+        "median_elapsed_ms": 0.7915
+      },
+      "eggstract-dag": {
+        "median_cost": 119.0,
+        "median_elapsed_ms": 29.089959
+      }
+    },
+    "polynomial/512/1": {
+      "egg-tree": {
+        "median_cost": 76.0,
+        "median_elapsed_ms": 0.572458
+      },
+      "egg-lp": {
+        "median_cost": 69.0,
+        "median_elapsed_ms": 741.88675
+      },
+      "gym-greedy-dag": {
+        "median_cost": 78.0,
+        "median_elapsed_ms": 7.325
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 72.0,
+        "median_elapsed_ms": 3.124666
+      },
+      "eggstract-tree": {
+        "median_cost": 81.0,
+        "median_elapsed_ms": 0.435667
+      },
+      "eggstract-dag": {
+        "median_cost": 67.0,
+        "median_elapsed_ms": 6.32675
+      }
+    },
+    "polynomial/512/2": {
+      "egg-tree": {
+        "median_cost": 145.0,
+        "median_elapsed_ms": 1.504792
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 128.0,
+        "median_elapsed_ms": 24.262333
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 131.0,
+        "median_elapsed_ms": 9.547541
+      },
+      "eggstract-tree": {
+        "median_cost": 157.0,
+        "median_elapsed_ms": 0.82725
+      },
+      "eggstract-dag": {
+        "median_cost": 98.0,
+        "median_elapsed_ms": 33.495792
+      }
+    },
+    "polynomial/512/3": {
+      "egg-tree": {
+        "median_cost": 118.0,
+        "median_elapsed_ms": 0.878792
+      },
+      "egg-lp": {
+        "median_cost": 101.0,
+        "median_elapsed_ms": 858.78
+      },
+      "gym-greedy-dag": {
+        "median_cost": 107.0,
+        "median_elapsed_ms": 15.434042
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 96.0,
+        "median_elapsed_ms": 5.770375
+      },
+      "eggstract-tree": {
+        "median_cost": 117.0,
+        "median_elapsed_ms": 0.5425
+      },
+      "eggstract-dag": {
+        "median_cost": 83.0,
+        "median_elapsed_ms": 22.693083
+      }
+    },
+    "boolean/32/0": {
+      "egg-tree": {
+        "median_cost": 20.0,
+        "median_elapsed_ms": 0.084083
+      },
+      "egg-lp": {
+        "median_cost": 20.0,
+        "median_elapsed_ms": 649.174875
+      },
+      "gym-greedy-dag": {
+        "median_cost": 20.0,
+        "median_elapsed_ms": 0.597334
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 20.0,
+        "median_elapsed_ms": 0.425833
+      },
+      "eggstract-tree": {
+        "median_cost": 20.0,
+        "median_elapsed_ms": 0.072458
+      },
+      "eggstract-dag": {
+        "median_cost": 20.0,
+        "median_elapsed_ms": 0.375916
+      }
+    },
+    "boolean/32/1": {
+      "egg-tree": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.042125
+      },
+      "egg-lp": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 2.598041
+      },
+      "gym-greedy-dag": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.1935
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.1735
+      },
+      "eggstract-tree": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.034291
+      },
+      "eggstract-dag": {
+        "median_cost": 16.0,
+        "median_elapsed_ms": 0.16275
+      }
+    },
+    "boolean/32/2": {
+      "egg-tree": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.058709
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.388583
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.305875
+      },
+      "eggstract-tree": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.052292
+      },
+      "eggstract-dag": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.244459
+      }
+    },
+    "boolean/32/3": {
+      "egg-tree": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.029209
+      },
+      "egg-lp": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 13.0415
+      },
+      "gym-greedy-dag": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.139667
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.097917
+      },
+      "eggstract-tree": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.027292
+      },
+      "eggstract-dag": {
+        "median_cost": 19.0,
+        "median_elapsed_ms": 0.086584
+      }
+    },
+    "boolean/128/0": {
+      "egg-tree": {
+        "median_cost": 53.0,
+        "median_elapsed_ms": 0.492
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 54.0,
+        "median_elapsed_ms": 6.639167
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 52.0,
+        "median_elapsed_ms": 3.788375
+      },
+      "eggstract-tree": {
+        "median_cost": 54.0,
+        "median_elapsed_ms": 0.385334
+      },
+      "eggstract-dag": {
+        "median_cost": 51.0,
+        "median_elapsed_ms": 5.1065
+      }
+    },
+    "boolean/128/1": {
+      "egg-tree": {
+        "median_cost": 28.0,
+        "median_elapsed_ms": 0.319458
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 27.0,
+        "median_elapsed_ms": 3.266667
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 29.0,
+        "median_elapsed_ms": 1.60525
+      },
+      "eggstract-tree": {
+        "median_cost": 27.0,
+        "median_elapsed_ms": 0.273542
+      },
+      "eggstract-dag": {
+        "median_cost": 27.0,
+        "median_elapsed_ms": 1.012958
+      }
+    },
+    "boolean/128/2": {
+      "egg-tree": {
+        "median_cost": 30.0,
+        "median_elapsed_ms": 0.182875
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 30.0,
+        "median_elapsed_ms": 1.924416
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 30.0,
+        "median_elapsed_ms": 0.937834
+      },
+      "eggstract-tree": {
+        "median_cost": 30.0,
+        "median_elapsed_ms": 0.149167
+      },
+      "eggstract-dag": {
+        "median_cost": 28.0,
+        "median_elapsed_ms": 0.915583
+      }
+    },
+    "boolean/128/3": {
+      "egg-tree": {
+        "median_cost": 38.0,
+        "median_elapsed_ms": 0.277125
+      },
+      "egg-lp": {
+        "median_cost": 37.0,
+        "median_elapsed_ms": 988.728583
+      },
+      "gym-greedy-dag": {
+        "median_cost": 38.0,
+        "median_elapsed_ms": 2.728958
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 37.0,
+        "median_elapsed_ms": 1.429584
+      },
+      "eggstract-tree": {
+        "median_cost": 38.0,
+        "median_elapsed_ms": 0.238834
+      },
+      "eggstract-dag": {
+        "median_cost": 37.0,
+        "median_elapsed_ms": 1.554291
+      }
+    },
+    "boolean/512/0": {
+      "egg-tree": {
+        "median_cost": 45.0,
+        "median_elapsed_ms": 0.342125
+      },
+      "egg-lp": {
+        "median_cost": 47.0,
+        "median_elapsed_ms": 847.426917
+      },
+      "gym-greedy-dag": {
+        "median_cost": 46.0,
+        "median_elapsed_ms": 3.012
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 47.0,
+        "median_elapsed_ms": 1.61725
+      },
+      "eggstract-tree": {
+        "median_cost": 47.0,
+        "median_elapsed_ms": 0.258625
+      },
+      "eggstract-dag": {
+        "median_cost": 44.0,
+        "median_elapsed_ms": 2.998333
+      }
+    },
+    "boolean/512/1": {
+      "egg-tree": {
+        "median_cost": 63.0,
+        "median_elapsed_ms": 0.65775
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 62.0,
+        "median_elapsed_ms": 9.036792
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 63.0,
+        "median_elapsed_ms": 4.233917
+      },
+      "eggstract-tree": {
+        "median_cost": 63.0,
+        "median_elapsed_ms": 0.530958
+      },
+      "eggstract-dag": {
+        "median_cost": 58.0,
+        "median_elapsed_ms": 9.152875
+      }
+    },
+    "boolean/512/2": {
+      "egg-tree": {
+        "median_cost": 71.0,
+        "median_elapsed_ms": 0.622917
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 69.0,
+        "median_elapsed_ms": 6.671542
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 73.0,
+        "median_elapsed_ms": 3.135125
+      },
+      "eggstract-tree": {
+        "median_cost": 72.0,
+        "median_elapsed_ms": 0.437333
+      },
+      "eggstract-dag": {
+        "median_cost": 67.0,
+        "median_elapsed_ms": 8.123083
+      }
+    },
+    "boolean/512/3": {
+      "egg-tree": {
+        "median_cost": 56.0,
+        "median_elapsed_ms": 0.483333
+      },
+      "egg-lp": null,
+      "gym-greedy-dag": {
+        "median_cost": 55.0,
+        "median_elapsed_ms": 5.91
+      },
+      "gym-faster-greedy-dag": {
+        "median_cost": 55.0,
+        "median_elapsed_ms": 2.830667
+      },
+      "eggstract-tree": {
+        "median_cost": 56.0,
+        "median_elapsed_ms": 0.375125
+      },
+      "eggstract-dag": {
+        "median_cost": 54.0,
+        "median_elapsed_ms": 6.791458
+      }
+    }
+  },
+  "issues": [
+    {
+      "case": "polynomial/512/2",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: called `Option::unwrap()` on a `None` value"
+    },
+    {
+      "case": "polynomial/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: called `Option::unwrap()` on a `None` value"
+    },
+    {
+      "case": "polynomial/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: called `Option::unwrap()` on a `None` value"
+    },
+    {
+      "case": "polynomial/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: called `Option::unwrap()` on a `None` value"
+    },
+    {
+      "case": "polynomial/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: called `Option::unwrap()` on a `None` value"
+    },
+    {
+      "case": "polynomial/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: called `Option::unwrap()` on a `None` value"
+    },
+    {
+      "case": "boolean/32/2",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/32/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/32/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/32/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/32/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/32/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/0",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/0",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/0",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/0",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/0",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/0",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/1",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/2",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/128/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/1",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/1",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/2",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/2",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/3",
+      "method": "egg-lp",
+      "phase": "warmup",
+      "repetition": 0,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/3",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 1,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/3",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 2,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/3",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 3,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/3",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 4,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    },
+    {
+      "case": "boolean/512/3",
+      "method": "egg-lp",
+      "phase": "measured",
+      "repetition": 5,
+      "error": "panic: good_lp failed to solve the ILP problem: Infeasible"
+    }
+  ],
+  "raw_file": "results.json",
+  "raw_sha256": "30c7bb60777ce4eaaabf74eeba0989b0f86df62cb5c7f6b4af657238049542d6"
+}

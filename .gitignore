@@ -1,4 +1,5 @@
 /target/
+/benchmarks/egg/target/
 /dist/
 /build/
 *.egg-info/

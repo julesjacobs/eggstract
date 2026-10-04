@@ -15,6 +15,19 @@ The native library has no Python or external solver dependency. The Rust API
 uses [`egraph-serialize`](https://crates.io/crates/egraph-serialize) graphs and
 explicit requested roots.
 
+## Benchmarks
+
+On 24 synthetic Boolean/polynomial e-graphs, Eggstract DAG used **7.1% fewer
+nodes than extraction-gym's faster greedy DAG**, taking **1.6× as long**
+(geometric means); it improved 18 cases and tied 6. Compared with egg's tree
+extractor, it used **11.0% fewer nodes**, taking **8.4× as long**.
+
+![DAG cost and extraction time against egg and extraction-gym](benchmarks/egg/results.svg)
+
+Apple M4 Max; five measured runs per case. All output DAGs were independently
+checked. egg LP failed on 8/24 cases, so its aggregate is omitted. These are
+synthetic development benchmarks; see [methods and raw results](benchmarks/egg).
+
 ## Credit and originality
 
 Eggstract packages implementations and adaptations of established methods,

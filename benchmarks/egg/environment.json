@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-04",
+  "machine": "Apple M4 Max",
+  "memory_bytes": 51539607552,
+  "os": "macOS 26.6.2 (25G83)",
+  "architecture": "aarch64",
+  "rustc": "1.97.1 (8bab26f4f 2026-07-14)",
+  "cargo": "1.97.1 (c980f4866 2026-06-30)",
+  "cbc": "2.10.13",
+  "library_commit": "5b6f6f438d4e3662b0bcf387163eb8be6d3a1195",
+  "profile": "release",
+  "parallel_benchmark_processes": 1,
+  "stdout": "/dev/null (upstream logging is retained)",
+  "plotting": "Python 3.14.6, Matplotlib 3.11.2"
+}
